@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saez Cueros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header con logo y navegación -->
+  <header class="header">
+    <div class="header-left">
+      <img src="img/logo.jpg" alt="Logo Toro Buenos Aires" class="logo" />
+      <h1 class="titulo">Saez Cueros</h1>
+    </div>
+  
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+  
+    <!-- Navegación -->
+    <nav class="nav" id="navMenu">
+  
+      <div class="dropdown">
+        <a class="dropdown-toggle">Productos</a>
+        <div class="dropdown-menu">
+          <a href="pages/cinturones.html">Cinturones</a>
+          <a href="pages/billeteras.html">Billeteras</a>
+          <a href="pages/marroquineria.html">Pequeña marroquinería</a>
+        </div>
+      </div>
+
+      <a href="#quienes-somos">Quiénes somos</a>
+
+    </nav>
+  </header>
+  
+
+  <!-- Carátula de bienvenida -->
+  <section class="caratula">
+    <div class="caratula-contenido">
+      <h2>Saez Cueros</h2>
+      <p>marroquinería argentina en cuero, diseñada para durar toda la vida.</p>
+      <a href="#productos" class="flecha-abajo">&#x25BC;</a>
+    </div>
+  </section>
+
+  <div class="separador-onda">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,0 C720,100 720,0 1440,100 L1440,0 L0,0 Z" fill="#1a1a1a" />
+    </svg>
+  </div>
+  
+
+  <!-- Productos -->
+<section id="productos">
+  <h2 class="titulo-productos">Nuestros Productos</h2>
+
+  <div class="productos-lista fade-in-up">
+    <article class="producto producto-card">
+      <a href="pages/cinturones.html" class="producto-link">
+        <img src="img/cinturon1.jpg" alt="Cinturón de cuero negro" />
+        <div class="producto-info">
+          <h2>Cinturones</h2>
+          <p>%100 cuero vacuno con costura reforzada y hebilla premium.</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="producto producto-card">
+      <a href="pages/billeteras.html" class="producto-link">
+        <img src="img/billetera1.jpg" alt="Billetera de cuero" />
+        <div class="producto-info">
+          <h2>Billeteras</h2>
+          <p>%100 cuero vacuno con costura reforzada y múltiples modelos.</p>
+        </div>
+      </a>
+    </article>
+
+    <article class="producto producto-card">
+      <a href="pages/marroquineria.html" class="producto-link">
+        <img src="img/tarjetero1.jpg" alt="Tarjetero de cuero" />
+        <div class="producto-info">
+          <h2>Pequeña marroquinería</h2>
+          <p>Tarjeteros, neceseres, bolsos pequeños. %100 cuero vacuno con costura reforzada.</p>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<div class="divisor-corte">
+  <span class="linea-costura"></span>
+  <span class="icono-tijera">✂</span>
+  <span class="linea-costura"></span>
+</div>
+
+  <!-- Quiénes Somos -->
+ <section class="quienes-somos" id="quienes-somos">
+   <div class="quienes-contenido">
+     <h2>Quiénes somos</h2>
+     <p>
+       En Saez Cueros nos dedicamos con pasión a la marroquinería argentina. Nuestros productos son realizados en %100 cuero vacuno, con un fuerte compromiso por la calidad y la tradición.
+     </p>
+     <p>
+       Somos artesanos que valoran el detalle, el trabajo manual y la durabilidad. Cada pieza cuenta una historia de trabajo y dedicación.
+     </p>
+   </div>
+ </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Saez Cueros. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script de comportamiento -->
+  <script src="main.js"></script>
+
+  <!-- Botón Volver Arriba -->
+  <a href="#" class="btn-volver-arriba" title="Volver arriba">
+  
+    <span>&#8679;</span> <!-- flecha doble elegante hacia arriba -->
+  </a>
+
+</body>
+</html>
