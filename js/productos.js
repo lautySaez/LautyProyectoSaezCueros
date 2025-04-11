@@ -1,5 +1,5 @@
 // ==============================
-// CAMBIO DE IMAGEN POR COLOR
+// CAMBIO DE IMAGEN POR COLOR CON EFECTO DE OPACIDAD
 // ==============================
 
 document.querySelectorAll('.card-producto').forEach(card => {
@@ -8,7 +8,7 @@ document.querySelectorAll('.card-producto').forEach(card => {
   let imagenActual = img.src;
 
   colores.forEach(color => {
-    const nuevaImg = color.getAttribute('data-img');
+    const nuevaImg = color.dataset.img;
 
     // Hover: vista previa temporal
     color.addEventListener('mouseover', () => {
@@ -20,10 +20,20 @@ document.querySelectorAll('.card-producto').forEach(card => {
       img.src = imagenActual;
     });
 
-    // Click: fijar imagen como nueva actual
+    // Click: fijar imagen y aplicar efecto
     color.addEventListener('click', () => {
-      imagenActual = nuevaImg;
-      img.src = nuevaImg;
+      if (imagenActual !== nuevaImg) {
+        img.classList.add('cambiando');
+        setTimeout(() => {
+          img.src = nuevaImg;
+          img.classList.remove('cambiando');
+        }, 150);
+        imagenActual = nuevaImg;
+
+        // Activar color seleccionado
+        colores.forEach(c => c.classList.remove('activo'));
+        color.classList.add('activo');
+      }
     });
   });
 });

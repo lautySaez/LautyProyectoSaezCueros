@@ -112,6 +112,11 @@
   .color:hover {
     transform: scale(1.2);
   }
+
+  .color.activo {
+    outline: 2px solid #d4af37;
+  }
+  
   
   /* =============================
      RESPONSIVE PARA CELULARES
