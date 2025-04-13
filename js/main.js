@@ -11,19 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Animación al hacer scroll
-  const observer = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add('animado');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  document.querySelectorAll('.producto-card').forEach(el => observer.observe(el));
-
   // Mostrar/Ocultar menú hamburguesa
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
@@ -46,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Scroll suave al hacer click
     btnVolverArriba.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({
@@ -57,9 +43,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
-
-
-
-
-
