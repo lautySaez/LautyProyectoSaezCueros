@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   // Scroll suave para enlaces internos
   document.querySelectorAll('a[href^="#"]').forEach(enlace => {
     enlace.addEventListener('click', function(e) {
@@ -12,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Mostrar/Ocultar menú hamburguesa
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
 
-  if (menuToggle && navMenu) {
+  if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      nav.classList.toggle('active');
     });
   }
 
@@ -41,5 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
 });
+
+
