@@ -40,6 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ================================
+  // MODO OSCURO / CLARO
+  // ================================
+  const toggleBtn = document.getElementById('toggle-tema');
+  const body = document.body;
+
+  // Aplicar el tema guardado aunque no haya toggle
+  const temaGuardado = localStorage.getItem('tema');
+  if (temaGuardado === 'claro') {
+    body.classList.add('tema-claro');
+  }
+
+  // Si hay botón toggle, actualizarlo
+  if (toggleBtn) {
+    toggleBtn.textContent = body.classList.contains('tema-claro') ? '🌙' : '☀️';
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('tema-claro');
+      const esClaro = body.classList.contains('tema-claro');
+      toggleBtn.textContent = esClaro ? '🌙' : '☀️';
+      localStorage.setItem('tema', esClaro ? 'claro' : 'oscuro');
+    });
+  }
+
 });
-
-

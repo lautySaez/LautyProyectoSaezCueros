@@ -1,0 +1,75 @@
+/* ==== BOTÓN MODO OSCURO/CLARO ==== */
+.boton-tema {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #d4af37;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton-tema:hover {
+    transform: scale(1.2);
+  }
+  
+  /* ==== TEMA CLARO ==== */
+  .tema-claro {
+    background: linear-gradient(145deg, #f0f0f0 0%, #ffffff 100%);
+    color: #121212;
+  }
+  
+  .tema-claro .header,
+  .tema-claro .nav,
+  .tema-claro .footer-extendido,
+  .tema-claro .producto,
+  .tema-claro .caratula,
+  .tema-claro .quienes-somos,
+  .tema-claro .ubicacion-contacto {
+    background-color: #fdfdfd;
+    color: #121212;
+  }
+  
+  .tema-claro .titulo,
+  .tema-claro .titulo-productos,
+  .tema-claro .titulo-header,
+  .tema-claro h2,
+  .tema-claro h3,
+  .tema-claro h4 {
+    color: #a48300;
+  }
+  
+  .tema-claro .producto:hover {
+    background-color: rgba(164, 131, 0, 0.06);
+    border-color: #a48300;
+    box-shadow: 0 0 12px rgba(164, 131, 0, 0.3);
+  }
+  
+  .tema-claro .btn-gold,
+  .tema-claro .btn-volver-arriba {
+    background-color: #a48300;
+    color: #fff;
+  }
+  
+  .tema-claro .btn-gold:hover,
+  .tema-claro .btn-volver-arriba:hover {
+    background-color: #947400;
+  }
+  
+  .tema-claro .footer-derechos {
+    color: #555;
+  }
+  
+  .tema-claro .dropdown-menu {
+    background-color: #f4f4f4;
+    border-color: #a48300;
+  }
+  
+  .tema-claro .dropdown-menu a {
+    color: #121212;
+  }
+  
+  .tema-claro .dropdown-menu a:hover {
+    background-color: rgba(164, 131, 0, 0.1);
+  }
+  
