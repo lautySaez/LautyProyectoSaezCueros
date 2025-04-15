@@ -212,3 +212,55 @@
 .tema-claro .info-contacto a:hover {
   text-decoration: underline;
 }
+
+/* MODO CLARO - SÓLO en productos.html */
+body.tema-claro.pagina-productos {
+  background-color: #fffef9;
+}
+
+body.tema-claro.pagina-productos .seccion-productos {
+  background-color: #fdfdfd;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+body.tema-claro.pagina-productos .producto {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.tema-claro.pagina-productos .producto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #a48300;
+}
+
+body.tema-claro.pagina-productos .producto h3 {
+  color: #a48300;
+}
+
+body.tema-claro.pagina-productos .producto p {
+  color: #444;
+}
+
+body.tema-claro.pagina-productos .btn-comprar {
+  background-color: #a48300;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body.tema-claro.pagina-productos .btn-comprar:hover {
+  background-color: #947400;
+}
+
+body.tema-claro.pagina-productos .separador {
+  border-top: 2px solid #e0e0e0;
+  margin: 2rem 0;
+}
+
