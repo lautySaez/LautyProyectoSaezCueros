@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Cambio de imagen por color
+  // ==== Cambio de imagen por color ====
   document.querySelectorAll('.card-producto').forEach(card => {
     const img = card.querySelector('.imagen-producto');
     const colores = card.querySelectorAll('.color');
@@ -9,17 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     colores.forEach(color => {
       const nuevaImg = color.dataset.img;
 
-      // Hover: vista previa temporal
       color.addEventListener('mouseover', () => {
         img.src = nuevaImg;
       });
 
-      // Salida del hover: volver a la imagen actual
       color.addEventListener('mouseout', () => {
         img.src = imagenActual;
       });
 
-      // Click: fijar imagen y aplicar efecto
       color.addEventListener('click', () => {
         if (imagenActual !== nuevaImg) {
           img.classList.add('cambiando');
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 150);
           imagenActual = nuevaImg;
 
-          // Activar color seleccionado
           colores.forEach(c => c.classList.remove('activo'));
           color.classList.add('activo');
         }
@@ -37,14 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Buscador de productos
+  // ==== Buscador ====
   const buscador = document.getElementById('buscador');
   const productos = document.querySelectorAll('.card-producto');
 
   if (buscador) {
     buscador.addEventListener('input', () => {
       const filtro = buscador.value.toLowerCase();
-
       productos.forEach(producto => {
         const texto = producto.textContent.toLowerCase();
         producto.style.display = texto.includes(filtro) ? 'block' : 'none';
@@ -52,14 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Ordenar productos por filtro
+  // ==== Ordenar productos ====
   document.querySelectorAll('#menu-filtro li').forEach(item => {
     item.addEventListener('click', () => {
       const tipo = item.dataset.orden;
       const productosContainer = document.querySelector('.catalogo-productos');
       const productos = Array.from(document.querySelectorAll('.card-producto'));
 
-      // Lógica de orden
       productos.sort((a, b) => {
         const precioA = parseFloat(a.dataset.precio);
         const precioB = parseFloat(b.dataset.precio);
@@ -72,16 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tipo === "viejo") return fechaA - fechaB;
       });
 
-      // Eliminamos los productos viejos y reinsertamos ordenados
       productos.forEach(p => p.remove());
       productos.forEach(p => productosContainer.appendChild(p));
 
-      // Cerrar el menú de filtros
       document.getElementById('menu-filtro').classList.remove('show');
     });
   });
 
-  // Mostrar u ocultar el menú de orden
+  // ==== Mostrar/Ocultar menú filtro ====
   const btnFiltro = document.getElementById('btn-filtro');
   const menuFiltro = document.getElementById('menu-filtro');
 
@@ -89,18 +81,58 @@ document.addEventListener('DOMContentLoaded', () => {
     menuFiltro.classList.toggle('show');
   });
 
-  // Cerrar el menú si clickeamos fuera de él
   document.addEventListener('click', (e) => {
     const esBoton = e.target.id === 'btn-filtro';
     const dentroDelMenu = e.target.closest('#menu-filtro');
-
     if (!esBoton && !dentroDelMenu) {
-      document.getElementById('menu-filtro').classList.remove('show');
+      menuFiltro.classList.remove('show');
     }
   });
 
-});
+  // ==== Carrusel de productos destacados ====
+  
+  const track = document.querySelector('.carrusel-track');
+      const prevBtn = document.querySelector('.btn-carrusel.prev');
+      const nextBtn = document.querySelector('.btn-carrusel.next');
+      const slides = document.querySelectorAll('.slide');
 
+      let currentIndex = 0;
+
+      function getSlideWidth() {
+        return slides[0].offsetWidth + 20; // slide + margen
+      }
+
+      function getVisibleSlides() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+      }
+
+      function updateCarrusel() {
+        const slideWidth = getSlideWidth();
+        const offset = currentIndex * slideWidth;
+        track.style.transform = `translateX(-${offset}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        const maxIndex = slides.length - getVisibleSlides();
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateCarrusel();
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarrusel();
+        }
+      });
+
+      window.addEventListener('resize', updateCarrusel);
+      updateCarrusel();
+
+});
 
 
   
