@@ -120,11 +120,21 @@ body {
 }
 
 .detalle-info h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #d4af37;
   margin-bottom: 3rem;
   word-spacing: 5px;
 }
+
+.detalle-info .precios {
+  font-size: 2rem;
+  color: #d4af37;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 
 .detalle-info p,
 .detalle-info ul {

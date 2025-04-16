@@ -11,22 +11,37 @@
 
   <header class="header-producto">
     <h1 class="titulo-seccion">Marroquineria variada</h1>
+    
   </header>
 
-    <!-- Buscador de productos -->
-    <div class="buscador-contenedor">
-      <input type="text" id="buscador" placeholder="Buscar billetera por nombre o color...">
+   <!-- Buscador de productos -->
+<div class="buscador-contenedor">
+  <div class="buscador-contenido">
+    <input type="text" id="buscador" placeholder="Buscar billetera por nombre o color...">
+    <div class="filtro-hamburguesa">
+      <button id="btn-filtro">Ordenar ▼</button>
+      <ul id="menu-filtro">
+        <li data-orden="nuevo">Más recientes</li>
+        <li data-orden="viejo">Más antiguos</li>
+        <li data-orden="caro">Mayor precio</li>
+        <li data-orden="barato">Menor precio</li>
+      </ul>
     </div>
+  </div>
+</div>
 
+
+    
   <section class="catalogo-productos">
     
     <!-- Producto individual -->
     <!-- Producto 1 -->
-<div class="card-producto">
+ <div class="card-producto" data-precio="7500" data-fecha="2025-01-01">
     <a href="productos/tarjetero.html">
       <img src="../img/tarjetero1Negro.jpg" alt="Tarjetero cuero" class="imagen-producto">
       <h2>Tarjetero Cuero Clasico</h2>
     </a>
+    <p>$7.500</p>
     <div class="colores">
         <span class="color" data-img="../img/tarjetero1Negro.jpg" style="background-color: #000;"></span>
       <span class="color" data-img="../img/tarjetero1Marron.jpg" style="background-color: #5e3016;"></span>
@@ -36,11 +51,12 @@
   </div>
   
   <!-- Producto 2 -->
-  <div class="card-producto">
+  <div class="card-producto" data-precio="24500" data-fecha="2025-02-02">
     <a href="productos/neceser.html">
       <img src="../img/neceserNegro.jpg" alt="Neceser Cuero Clasico" class="imagen-producto">
       <h2>Neceser Cuero Clasico</h2>
     </a>
+    <p>$24.500</p>
     <div class="colores">
       <span class="color" data-img="../img/neceserNegro.jpg" style="background-color: #000000;"></span>
       <span class="color" data-img="../img/neceserMarron.jpg" style="background-color: #412613;"></span>
@@ -50,11 +66,12 @@
   </div>
   
   <!-- Producto 3 -->
-  <div class="card-producto">
+  <div class="card-producto" data-precio="354500" data-fecha="2025-03-03">
     <a href="productos/bolso-viaje.html">
       <img src="../img/bolsoViajeNegro.jpg" alt="Bolsos Viaje Cuero Clasico" class="imagen-producto">
       <h2>Bolso de Viaje de Cuero Clásico</h2>
     </a>
+    <p>$354.500</p>
     <div class="colores">
       <span class="color" data-img="../img/bolsoViajeNegro.jpg" style="background-color: #000000;"></span>
       <span class="color" data-img="../img/bolsoViajeGris.jpg" style="background-color: #5f5a57;"></span>

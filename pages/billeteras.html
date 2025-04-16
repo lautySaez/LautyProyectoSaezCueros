@@ -14,20 +14,32 @@
     <h1 class="titulo-seccion">Billeteras</h1>
   </header>
 
-  <!-- Buscador de productos -->
-  <div class="buscador-contenedor">
+     <!-- Buscador de productos -->
+<div class="buscador-contenedor">
+  <div class="buscador-contenido">
     <input type="text" id="buscador" placeholder="Buscar billetera por nombre o color...">
+    <div class="filtro-hamburguesa">
+      <button id="btn-filtro">Ordenar ▼</button>
+      <ul id="menu-filtro">
+        <li data-orden="nuevo">Más recientes</li>
+        <li data-orden="viejo">Más antiguos</li>
+        <li data-orden="caro">Mayor precio</li>
+        <li data-orden="barato">Menor precio</li>
+      </ul>
+    </div>
   </div>
+</div>
 
   <section class="catalogo-productos">
     
     <!-- Producto individual -->
     <!-- Producto 1 -->
-<div class="card-producto">
+<div class="card-producto" data-precio="34000" data-fecha="2025-05-05">
     <a href="productos/billetera-hermes.html">
       <img src="../img/billetera1NegraHermes.jpg" alt="billetera hermes clasica" class="imagen-producto">
       <h2>Billetera Hermes Clasica</h2>
     </a>
+    <p>$34.000</p>
     <div class="colores">
       <span class="color" data-img="../img/billetera1NegraHermes.jpg" style="background-color: #000;"></span>
       <span class="color" data-img="../img/billetera1AzulHermes.jpg" style="background-color: #110c52;"></span>
@@ -36,11 +48,12 @@
   </div>
   
   <!-- Producto 2 -->
-  <div class="card-producto">
+  <div class="card-producto" data-precio="32000" data-fecha="2025-06-06">
     <a href="productos/billetera-anilina.html">
       <img src="../img/billetera2NegraAnilina.jpg" alt="billetera anilina clasica" class="imagen-producto">
       <h2>Billetera Anilina Clasica</h2>
     </a>
+    <p>$32.000</p>
     <div class="colores">
       <span class="color" data-img="../img/billetera2NegraAnilina.jpg" style="background-color: #000000;"></span>
       <span class="color" data-img="../img/billetera2MarronAnilina.jpg" style="background-color: #663713;"></span>

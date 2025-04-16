@@ -13,20 +13,32 @@
     <h1 class="titulo-seccion">Cinturones</h1>
   </header>
 
-    <!-- Buscador de productos -->
-    <div class="buscador-contenedor">
-      <input type="text" id="buscador" placeholder="Buscar billetera por nombre o color...">
+       <!-- Buscador de productos -->
+<div class="buscador-contenedor">
+  <div class="buscador-contenido">
+    <input type="text" id="buscador" placeholder="Buscar billetera por nombre o color...">
+    <div class="filtro-hamburguesa">
+      <button id="btn-filtro">Ordenar ▼</button>
+      <ul id="menu-filtro">
+        <li data-orden="nuevo">Más recientes</li>
+        <li data-orden="viejo">Más antiguos</li>
+        <li data-orden="caro">Mayor precio</li>
+        <li data-orden="barato">Menor precio</li>
+      </ul>
     </div>
+  </div>
+</div>
 
   <section class="catalogo-productos">
     
     <!-- Producto individual -->
     <!-- Producto 1 -->
-<div class="card-producto">
+<div class="card-producto" data-precio="64700" data-fecha="2025-07-07">
    <a href="productos/cinturon-bridge.html">
       <img src="../img/cinturon1.jpg" alt="Cinturón negro" class="imagen-producto">
       <h2>Cinturon Bridge Clasico</h2>
     </a>
+    <p>$64.700</p>
     <div class="colores">
         <span class="color" data-img="../img/cinturon1.jpg" style="background-color: #000;"></span>
       <span class="color" data-img="../img/cinturon1Marron.jpg" style="background-color: #5a3825;"></span>
@@ -35,11 +47,12 @@
   </div>
   
   <!-- Producto 2 -->
-  <div class="card-producto">
+  <div class="card-producto" data-precio="62600" data-fecha="2025-08-08">
     <a href="productos/cinturon-anilina.html">
       <img src="../img/cinturon2.jpg" alt="Cinturón color caramelo" class="imagen-producto">
       <h2>Cinturon Anilina Clasico</h2>
     </a>
+    <p>$62.600</p>
     <div class="colores">
       <span class="color" data-img="../img/cinturon2.jpg" style="background-color: #6b4525;"></span>
       <span class="color" data-img="../img/cinturon2Marron.jpg" style="background-color: #b97037;"></span>
