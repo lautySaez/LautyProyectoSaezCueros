@@ -127,21 +127,25 @@
 
 .carrusel-contenedor {
   position: relative;
-  overflow: hidden;
   max-width: 1000px;
   margin: 0 auto;
-  display: flex;
-  align-items: center; /* centra verticalmente las flechas */
+  overflow: visible; /* ← importante */
 }
 
 
+.carrusel-viewport {
+  overflow: hidden;
+  padding: 0; /* Eliminamos el padding */
+}
 .carrusel-track {
   display: flex;
   transition: transform 0.5s ease;
+  width: max-content;
+  padding-left: 40px;  /* Nueva separación del borde izquierdo */
+  padding-right: 40px; /* Nueva separación del borde derecho */
 }
-
 .slide {
-  flex: 0 0 300px; /* Cada slide mide 300px */
+  flex: 0 0 300px;
   margin: 0 10px;
   background-color: #2a2a2a;
   border-radius: 10px;
@@ -174,10 +178,11 @@
   font-size: 2rem;
   padding: 0.3rem 0.8rem;
   cursor: pointer;
-  z-index: 2;
   border-radius: 4px;
+  z-index: 10;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s ease;
+  pointer-events: auto;
 }
 
 .btn-carrusel:hover {
@@ -185,11 +190,11 @@
 }
 
 .btn-carrusel.prev {
-  left: 10px;
+  left: -40px; /* ← las saca del carril */
 }
 
 .btn-carrusel.next {
-  right: 10px;
+  right: -40px;
 }
 
   /* ========== CATÁLOGO DE PRODUCTOS ========== */
@@ -268,6 +273,24 @@
     outline: 2px solid #d4af37;
   }
 
+  /*VER MAS BOTON*/
+
+  .btn-ver-mas {
+    background-color: #d4af37;
+    color: #121212;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+  }
+  
+  .btn-ver-mas:hover {
+    background-color: #c19c2f;
+  }  
+  
   /*FOOTER EXTENDIDO*/
 
   .footer-extendido {

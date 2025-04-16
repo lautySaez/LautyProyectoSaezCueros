@@ -14,6 +14,43 @@
     
   </header>
 
+    <!-- CARRUSEL -->
+<section class="carrusel-productos-destacados">
+  <h2 class="titulo-carrusel">Productos destacados</h2>
+  
+  <div class="carrusel-contenedor">
+    <button class="btn-carrusel prev">‹</button>
+    
+    <!-- Viewport agregado -->
+    <div class="carrusel-viewport">
+      <div class="carrusel-track">
+        <div class="slide">
+          <img src="../img/neceserCaramelo.jpg" alt="Neceser Caramelo" />
+          <p>Neceser Caramelo</p>
+        </div>
+        <div class="slide">
+          <img src="../img/tarjetero1Azul.jpg" alt="Tarjetero Azul" />
+          <p>Tarjetero Azul</p>
+        </div>
+        <div class="slide">
+          <img src="../img/bolsoViajeMarron.jpg" alt="Bolso de Viaje Marron" />
+          <p>Bolso de Viaje Marron</p>
+        </div>
+        <div class="slide">
+          <img src="../img/neceserNegro.jpg" alt="Neceser Negro" />
+          <p>Neceser Negro</p>
+        </div>
+        <div class="slide">
+          <img src="../img/bolsoViajeBlanco.jpg" alt="Bolso de Viaje Blanco" />
+          <p>Bolso de Viaje Blanco</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-carrusel next">›</button>
+  </div>
+</section>
+
    <!-- Buscador de productos -->
 <div class="buscador-contenedor">
   <div class="buscador-contenido">
@@ -30,13 +67,11 @@
   </div>
 </div>
 
-
-    
   <section class="catalogo-productos">
     
     <!-- Producto individual -->
     <!-- Producto 1 -->
- <div class="card-producto" data-precio="7500" data-fecha="2025-01-01">
+   <div class="card-producto" data-precio="7500" data-fecha="2025-01-01">
     <a href="productos/tarjetero.html">
       <img src="../img/tarjetero1Negro.jpg" alt="Tarjetero cuero" class="imagen-producto">
       <h2>Tarjetero Cuero Clasico</h2>
@@ -81,10 +116,42 @@
       <span class="color" data-img="../img/bolsoViajeVerde.jpg" style="background-color: #096b1e;"></span>
     </div>
   </div>
+
+  <!-- Producto 4 -->
+  <div class="card-producto" data-precio="5300" data-fecha="2025-09-09">
+    <a href="productos/llaveroCinturon.html">
+      <img src="../img/llaveroNegroCinturon.jpg" alt="Llavero de Cuero" class="imagen-producto">
+      <h2>Llavero de Cuero</h2>
+    </a>
+    <p>$5.300</p>
+    <div class="colores">
+      <span class="color" data-img="../img/llaveroNegroCinturon.jpg" style="background-color: #000000;"></span>
+      <span class="color" data-img="../img/llaveroMarronCinturon.jpg" style="background-color: #351c09;"></span>
+    </div>
+   </div>
+
+   <!-- Producto 5 -->
+  <div class="card-producto" data-precio="120650" data-fecha="2025-10-10">
+    <a href="productos/carteraCuero.html">
+      <img src="../img/carteraCueroNegra.jpg" alt="Cartera de Cuero" class="imagen-producto">
+      <h2>Cartera de Cuero</h2>
+    </a>
+    <p>$120.650</p>
+    <div class="colores">
+      <span class="color" data-img="../img/carteraCueroNegra.jpg" style="background-color: #000000;"></span>
+      <span class="color" data-img="../img/carteraCueroMarron.jpg" style="background-color: #351c09;"></span>
+      <span class="color" data-img="../img/carteraCueroBordo.jpg" style="background-color: #5a0c02;"></span>
+    </div>
+   </div>
   
     <!-- Agregás más productos igual -->
     
   </section>
+
+  <div style="text-align: center; margin-top: 1rem;">
+    <button id="ver-mas-btn" class="btn-ver-mas">Ver más</button>
+  </div>
+  
 
   <a href="../index.html" class="btn-volver">← Volver al inicio</a>
 

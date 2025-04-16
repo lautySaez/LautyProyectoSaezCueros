@@ -92,45 +92,72 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==== Carrusel de productos destacados ====
   
   const track = document.querySelector('.carrusel-track');
-      const prevBtn = document.querySelector('.btn-carrusel.prev');
-      const nextBtn = document.querySelector('.btn-carrusel.next');
-      const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.btn-carrusel.prev');
+  const nextBtn = document.querySelector('.btn-carrusel.next');
+  const slides = document.querySelectorAll('.slide');
+  
+  let currentIndex = 0;
+  
+  function getSlideWidth() {
+    return slides[0].offsetWidth + 20; // ancho + margen
+  }
+  
+  function getVisibleSlides() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  
+  function updateCarrusel() {
+    const slideWidth = getSlideWidth();
+    const offset = currentIndex * slideWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    const maxIndex = slides.length - getVisibleSlides();
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // ← bucle infinito
+    }
+    updateCarrusel();
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = slides.length - getVisibleSlides(); // ← volver al final
+    }
+    updateCarrusel();
+  });
+  
+  window.addEventListener('resize', updateCarrusel);
+  updateCarrusel();
+  
+ // ==== Mostrar productos con botón "Ver más" ====
+ const productosCard = document.querySelectorAll('.card-producto');
+ const btnVerMas = document.getElementById('ver-mas-btn');
+ const cantidadInicial = 4;
+ let mostrandoTodo = false;
 
-      let currentIndex = 0;
+ function actualizarVista() {
+   productos.forEach((producto, index) => {
+     producto.style.display = mostrandoTodo || index < cantidadInicial ? 'block' : 'none';
+   });
 
-      function getSlideWidth() {
-        return slides[0].offsetWidth + 20; // slide + margen
-      }
+   btnVerMas.textContent = mostrandoTodo ? 'Ver menos' : 'Ver más';
+ }
 
-      function getVisibleSlides() {
-        if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 768) return 2;
-        return 1;
-      }
+ if (btnVerMas && productos.length > cantidadInicial) {
+   actualizarVista();
 
-      function updateCarrusel() {
-        const slideWidth = getSlideWidth();
-        const offset = currentIndex * slideWidth;
-        track.style.transform = `translateX(-${offset}px)`;
-      }
-
-      nextBtn.addEventListener('click', () => {
-        const maxIndex = slides.length - getVisibleSlides();
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          updateCarrusel();
-        }
-      });
-
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarrusel();
-        }
-      });
-
-      window.addEventListener('resize', updateCarrusel);
-      updateCarrusel();
+   btnVerMas.addEventListener('click', () => {
+     mostrandoTodo = !mostrandoTodo;
+     actualizarVista();
+   });
+ }
 
 });
 
