@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   // ==== Carrusel ====
   const track = document.querySelector('.carrusel-track');
   const prevBtn = document.querySelector('.btn-carrusel.prev');
@@ -38,12 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateCarrusel);
   updateCarrusel();
 
-
-  // ==== Productos ====
+  // ==== Variables generales ====
   const productosContainer = document.querySelector('.catalogo-productos');
   const todosLosProductos = Array.from(document.querySelectorAll('.card-producto'));
   const buscador = document.getElementById('buscador');
-  const btnVerMas = document.getElementById('btn-ver-mas');
+  const btnVerMas = document.getElementById('ver-mas-btn');
   const btnFiltro = document.getElementById('btn-filtro');
   const menuFiltro = document.getElementById('menu-filtro');
 
@@ -52,12 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const PASO = 4;
 
   function renderizarProductos() {
+    // Reinserta todos los productos
+    productosContainer.innerHTML = '';
     productosFiltrados.forEach((producto, i) => {
-      producto.style.display = i < cantidadVisible ? 'block' : 'none';
-      productosContainer.appendChild(producto); // Reinserta en el DOM
+      if (i < cantidadVisible) {
+        producto.style.display = 'block';
+        productosContainer.appendChild(producto);
+      }
     });
 
-    if (productosFiltrados.length <= 4) {
+    if (productosFiltrados.length <= PASO) {
       btnVerMas.style.display = 'none';
     } else {
       btnVerMas.style.display = 'inline-block';
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ==== Buscador ====
+  // ==== Buscador funcional ====
   buscador?.addEventListener('input', () => {
     const texto = buscador.value.toLowerCase();
 
@@ -73,14 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
       p.textContent.toLowerCase().includes(texto)
     );
 
-    cantidadVisible = 4;
+    cantidadVisible = PASO;
     renderizarProductos();
   });
 
-  // ==== Ver más / menos ====
+  // ==== Ver más / Ver menos ====
   btnVerMas?.addEventListener('click', () => {
     if (cantidadVisible >= productosFiltrados.length) {
-      cantidadVisible = 4;
+      cantidadVisible = PASO;
     } else {
       cantidadVisible += PASO;
     }
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
       });
 
-      cantidadVisible = 4;
+      cantidadVisible = PASO;
       renderizarProductos();
       menuFiltro.classList.remove('show');
     });
@@ -122,7 +124,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ==== Colores por producto ====
+  todosLosProductos.forEach(card => {
+    const img = card.querySelector('.imagen-producto');
+    const colores = card.querySelectorAll('.color');
+    let imagenActual = img.src;
+
+    colores.forEach(color => {
+      const nuevaImg = color.dataset.img;
+
+      color.addEventListener('mouseover', () => {
+        img.src = nuevaImg;
+      });
+
+      color.addEventListener('mouseout', () => {
+        img.src = imagenActual;
+      });
+
+      color.addEventListener('click', () => {
+        if (imagenActual !== nuevaImg) {
+          img.classList.add('cambiando');
+          setTimeout(() => {
+            img.src = nuevaImg;
+            img.classList.remove('cambiando');
+          }, 150);
+          imagenActual = nuevaImg;
+
+          colores.forEach(c => c.classList.remove('activo'));
+          color.classList.add('activo');
+        }
+      });
+    });
+  });
+
   // ==== Inicial ====
   renderizarProductos();
-
 });
+
