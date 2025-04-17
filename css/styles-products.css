@@ -132,11 +132,11 @@
   overflow: visible; /* ← importante */
 }
 
-
 .carrusel-viewport {
   overflow: hidden;
   padding: 0; /* Eliminamos el padding */
 }
+
 .carrusel-track {
   display: flex;
   transition: transform 0.5s ease;

@@ -41,4 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const track = document.querySelector('.opiniones-track');
+  const btnNext = document.querySelector('.btn-opinion.next');
+  const btnPrev = document.querySelector('.btn-opinion.prev');
+  const slides = document.querySelectorAll('.opinion');
+  let currentIndex = 0;
+
+  function updateOpiniones() {
+    const offset = currentIndex * slides[0].offsetWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  btnNext.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateOpiniones();
+  });
+
+  btnPrev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateOpiniones();
+  });
+
+  window.addEventListener('resize', updateOpiniones);
+  updateOpiniones();
+
 });

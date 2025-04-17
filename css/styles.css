@@ -311,6 +311,136 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/*QUE OPINAN DE NUESTROS PRODUCTOS*/
+
+.opiniones-clientes {
+  background: linear-gradient(to bottom, #1a1a1a, #222); /* más contraste */
+  padding: 5rem 2rem 6rem;
+  color: #f2f2f2;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.opiniones-clientes h2 {
+  color: #d4af37;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.opiniones-carrusel {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 3rem auto;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.opiniones-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.opiniones-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.opinion {
+  flex: 0 0 100%; /* ocupa 100% del ancho visible */
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background-color: #1a1a1a;
+}
+
+.foto-opinion {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d4af37;
+}
+
+.burbuja {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #f2f2f2;
+  max-width: 100%;
+}
+
+.burbuja::before {
+  content: "“";
+  font-size: 3rem;
+  color: #d4af37;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.burbuja h4 {
+  margin: 0 0 0.6rem;
+  color: #d4af37;
+  font-size: 1.1rem;
+}
+
+.burbuja p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.via{
+  margin: 0;
+  font-size: 0.5rem;
+  line-height: 0.5rem;
+  color:#d4af37;
+  text-align: left;
+}
+
+.opinion-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Flechas */
+.btn-opinion {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: #d4af37;
+  border: none;
+  color: #121212;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.btn-opinion.prev {
+  left: 300px;
+}
+
+.btn-opinion.next {
+  right: 300px;
+}
+
+.separator {
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 2rem auto 3rem;
+  border-radius: 2px;
+}
+
 /* Ubicacion local */
 .ubicacion-contacto {
   padding: 5rem 2rem;
@@ -628,6 +758,28 @@ body {
 
   .quienes-contenido {
     padding: 1.5rem;
+  }
+
+  .opinion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .burbuja {
+    text-align: center;
+  }
+
+  .btn-opinion.prev {
+    left: 0;
+  }
+
+  .btn-opinion.next {
+    right: 0;
+  }
+
+  .opiniones-carrusel {
+    padding: 0 30px;
   }
 
   .tarjeta-contacto {
