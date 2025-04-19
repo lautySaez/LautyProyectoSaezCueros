@@ -197,7 +197,7 @@
   right: -40px;
 }
 
-  /* ========== CATÁLOGO DE PRODUCTOS ========== */
+/* ========== CATÁLOGO DE PRODUCTOS ========== */
   .catalogo-productos {
     display: flex;
     flex-wrap: wrap;
@@ -379,101 +379,160 @@
     padding-top: 1rem;
   }
   
-  
   /* =============================
-     RESPONSIVE PARA CELULARES
-     ============================= */
-  @media (max-width: 768px) {
+     RESPONSIVE PARA CELULARES Y TABLETS
+ ============================= */
 
-    .catalogo-productos {
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-    }
+@media (max-width: 768px) {
   
-    .card-producto {
-      width: 90%;
-      max-width: 320px;
-    }
-  
-    .card-producto img {
-      height: auto;
-    }
-  
-    .titulo-seccion {
-      font-size: 1.6rem;
-    }
-  
-    .btn-volver {
-      display: block;
-      margin: 2rem auto 0;
-    }
-
-    .footer-contenido {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .footer-logo {
-      justify-content: center;
-    }
-
-    .slide {
-      min-width: 50%;
-    }
-
-    .slide {
-      min-width: 33.33%;
-    }
-
-    /* Carrusel */
-.carrusel-track {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.slide {
-  flex: 0 0 260px;
-  margin: 0 8px;
-}
-
-.slide img {
-  height: 180px;
-}
-
-/* Botones del carrusel */
-.btn-carrusel {
-  font-size: 1.5rem;
-  padding: 0.3rem 0.6rem;
-}
-
-.btn-carrusel.prev {
-  left: -20px;
-}
-
-.btn-carrusel.next {
-  right: -20px;
-}
-
-/* Colores redondos */
-.colores {
-  gap: 8px;
-}
-
-.color {
-  width: 18px;
-  height: 18px;
-}
-
-/* Botón "Ver más" */
-.btn-ver-mas {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-}
-
+  /* Cambios en la sección de productos */
+  .catalogo-productos {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
+  
+  .card-producto {
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 1.5rem; /* Añadí algo de margen entre tarjetas */
+  }
+
+  .card-producto:hover {
+    border: 1px solid #d4af37;
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+  
+  
+  
+  .card-producto img {
+    height: auto;
+  }
+  
+  .titulo-seccion {
+    font-size: 1.6rem;
+  }
+  
+  .btn-volver {
+    display: block;
+    margin: 2rem auto 0;
+  }
+
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+
+  /* Carrusel de Productos - Ajustes para pantallas pequeñas */
+  .carrusel-track {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .slide {
+    flex: 0 0 260px;
+    margin: 0 8px;
+  }
+
+  .slide img {
+    height: 180px;
+  }
+
+  /* Botones del carrusel */
+  .btn-carrusel {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .btn-carrusel.prev {
+    left: -20px;
+  }
+
+  .btn-carrusel.next {
+    right: -20px;
+  }
+
+  /* Colores de los productos */
+  .colores {
+    gap: 8px;
+  }
+
+  .color {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Botón "Ver más" */
+  .btn-ver-mas {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Sección de opiniones */
+  .opiniones-clientes h2 {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
+
+  .opiniones-track {
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .opinion {
+    min-width: 80%;
+    padding: 1rem;
+  }
+
+  .opinion img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .burbuja {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  /* Flechas */
+  .btn-opinion {
+    font-size: 1.5rem;
+    top: 58%;
+  }
+
+  .btn-opinion.prev {
+    left: 20px;
+  }
+
+  .btn-opinion.next {
+    right: 20px;
+  }
+  
+  /* Ajustes para las tarjetas de opiniones (perfil y burbuja) */
+  .opinion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .burbuja h4 {
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Agregar margen entre opiniones */
+  .opiniones-track {
+    margin-bottom: 2rem;
+  }
+}
+
+
   
   
   
